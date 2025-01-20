@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculateur de DPI Souris</title>
+    <title>Calculateur de DPI et Sensibilité</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Calculateur de DPI Souris</h1>
-        <p>Entrez les informations suivantes pour calculer le DPI de votre souris :</p>
+        <h1>Calculateur de DPI et Sensibilité</h1>
+        <p>Entrez les informations suivantes pour ajuster votre DPI en fonction de la sensibilité :</p>
 
         <div class="form-group">
-            <label for="distance">Distance parcourue (en cm) :</label>
-            <input type="number" id="distance" placeholder="Ex. 10" required>
+            <label for="currentDPI">DPI Actuel :</label>
+            <input type="number" id="currentDPI" placeholder="Ex. 800" required>
         </div>
 
         <div class="form-group">
-            <label for="pixels">Pixels parcourus à l'écran :</label>
-            <input type="number" id="pixels" placeholder="Ex. 500" required>
+            <label for="currentSensitivity">Sensibilité Actuelle :</label>
+            <input type="number" id="currentSensitivity" placeholder="Ex. 2" required>
         </div>
 
-        <button onclick="calculerDPI()">Calculer le DPI</button>
+        <div class="form-group">
+            <label for="newSensitivity">Nouvelle Sensibilité :</label>
+            <input type="number" id="newSensitivity" placeholder="Ex. 1.5" required>
+        </div>
+
+        <button onclick="calculerNouveauDPI()">Calculer le Nouveau DPI</button>
 
         <div id="resultat" class="resultat"></div>
     </div>

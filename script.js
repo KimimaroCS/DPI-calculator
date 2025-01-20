@@ -1,15 +1,16 @@
-function calculerDPI() {
+function calculerNouveauDPI() {
     // Récupérer les valeurs des champs
-    const distance = document.getElementById('distance').value;
-    const pixels = document.getElementById('pixels').value;
+    const currentDPI = document.getElementById('currentDPI').value;
+    const currentSensitivity = document.getElementById('currentSensitivity').value;
+    const newSensitivity = document.getElementById('newSensitivity').value;
 
     // Vérifier si les valeurs sont valides
-    if (distance > 0 && pixels > 0) {
-        // Calculer le DPI
-        const dpi = (pixels / distance) * 2.54; // Convertir la distance en pouces (1 pouce = 2.54 cm)
+    if (currentDPI > 0 && currentSensitivity > 0 && newSensitivity > 0) {
+        // Calculer le Nouveau DPI
+        const newDPI = (currentDPI * currentSensitivity) / newSensitivity;
         
         // Afficher le résultat
-        document.getElementById('resultat').innerHTML = `Le DPI de votre souris est : ${dpi.toFixed(2)}`;
+        document.getElementById('resultat').innerHTML = `Le Nouveau DPI est : ${newDPI.toFixed(2)}`;
     } else {
         document.getElementById('resultat').innerHTML = "Veuillez entrer des valeurs valides.";
     }
